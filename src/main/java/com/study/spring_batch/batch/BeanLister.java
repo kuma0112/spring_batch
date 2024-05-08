@@ -1,4 +1,4 @@
-package com.study.spring_batch;
+package com.study.spring_batch.batch;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;

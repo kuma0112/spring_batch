@@ -1,4 +1,4 @@
-package com.study.spring_batch;
+package com.study.spring_batch.batch;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.coyote.BadRequestException;

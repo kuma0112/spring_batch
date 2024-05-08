@@ -1,4 +1,4 @@
-package com.study.spring_batch;
+package com.study.spring_batch.batch;
 
 import org.springframework.batch.item.Chunk;
 import org.springframework.batch.item.ItemWriter;
