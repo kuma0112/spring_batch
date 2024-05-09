@@ -4,6 +4,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ProductService {
@@ -29,5 +32,15 @@ public class ProductService {
 
         product.update(requestDto);
         return new ProductResponseDto(product);
+    }
+
+    public List<ProductResponseDto> getProducts() {
+        List<Product> AllProducts = productRepository.findAll();
+        List<ProductResponseDto> AllProductsResponseDto = new ArrayList<>();
+        for (Product product : AllProducts) {
+            ProductResponseDto responseDto = new ProductResponseDto(product);
+            AllProductsResponseDto.add(responseDto);
+        }
+        return AllProductsResponseDto;
     }
 }
