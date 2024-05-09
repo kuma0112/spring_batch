@@ -1,5 +1,6 @@
 package com.study.spring_batch.product;
 
+import com.study.spring_batch.naver.ItemDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,7 +28,7 @@ public class ProductService {
             throw new IllegalArgumentException("유효하지 않은 가격입니다. 최소 " + MIN_MY_PRICE + "원 이상으로 입력하여 주세요.");
         }
 
-        Product product = productRepository.findById(id).orElseThrow(()- >
+        Product product = productRepository.findById(id).orElseThrow(() ->
                 new NullPointerException("해당 상품을 찾을 수 없습니다."));
 
         product.update(requestDto);
@@ -42,5 +43,11 @@ public class ProductService {
             AllProductsResponseDto.add(responseDto);
         }
         return AllProductsResponseDto;
+    }
+
+    public void updateBySearch(Long id, ItemDto itemDto) {
+        Product product = productRepository.findById(id).orElseThrow(() ->
+                new NullPointerException("찾으시는 상품이 존재하지 않습니다."));
+        product.updateByItemDto(itemDto);
     }
 }
