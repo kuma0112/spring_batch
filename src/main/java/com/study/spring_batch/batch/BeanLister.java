@@ -15,7 +15,7 @@ public class BeanLister {
         String[] beanNames = context.getBeanDefinitionNames();
         Arrays.sort(beanNames);  // 이름을 알파벳 순으로 정렬
         for (String beanName : beanNames) {
-            System.out.println(beanName);
+//            System.out.println(beanName);
         }
     }
 }

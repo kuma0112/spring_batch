@@ -11,6 +11,6 @@ public class BeanPrinter implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        beanLister.listBeans();
+//        beanLister.listBeans();
     }
 }
