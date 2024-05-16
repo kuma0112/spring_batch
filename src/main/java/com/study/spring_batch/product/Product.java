@@ -1,5 +1,6 @@
 package com.study.spring_batch.product;
 
+import com.study.spring_batch.member.entity.Member;
 import com.study.spring_batch.naver.ItemDto;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -30,6 +31,10 @@ public class Product extends Timestamped {
 
     @Column(nullable = false)
     private int myprice;
+
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    private Member member;
 
     public Product(ProductRequestDto requestDto){
         this.title = requestDto.getTitle();
