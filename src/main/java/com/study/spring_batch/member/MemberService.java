@@ -18,7 +18,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     public List<MemberResponseDto> getAllMembers() {
-        List<Member> AllMember = memberRepository.findAll();
+        List<Member> AllMember = memberRepository.findAllWithProducts();
         List<MemberResponseDto> allMemberResponseDto = new ArrayList<>();
         for (Member member : AllMember) {
             MemberResponseDto responseDto = new MemberResponseDto(member);
